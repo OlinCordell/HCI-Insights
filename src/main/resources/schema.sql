@@ -1,13 +1,3 @@
--- ==========================================================
--- Drop tables (in FK-safe order)
--- ==========================================================
-DROP TABLE IF EXISTS Result;
-DROP TABLE IF EXISTS Subtask;
-DROP TABLE IF EXISTS Session;
-DROP TABLE IF EXISTS Task;
-DROP TABLE IF EXISTS Participant;
-DROP TABLE IF EXISTS Study;
-DROP TABLE IF EXISTS Users;
 
 -- ==========================================================
 -- USER TABLE
