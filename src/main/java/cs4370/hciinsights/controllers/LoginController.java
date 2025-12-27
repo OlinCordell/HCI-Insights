@@ -4,6 +4,8 @@ import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
 
+import jakarta.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,13 +36,13 @@ public class LoginController {
     @GetMapping
     public ModelAndView webpage(@RequestParam(name = "error", required = false) String error) {
         ModelAndView mv = new ModelAndView("login");
-        userService.unAuthenticate();
         mv.addObject("errorMessage", error);
         return mv;
     }
 
     @PostMapping
-    public String login(@RequestParam("username") String username,
+    public String login(HttpServletRequest request,
+        @RequestParam("username") String username,
         @RequestParam("password") String password) {
             boolean isAuthenticated = false;
 
@@ -53,6 +55,7 @@ public class LoginController {
             }
 
             if (isAuthenticated) {
+                request.getSession().setAttribute("user", username);
                 return "redirect:/";
             } else {
                 String message = URLEncoder
