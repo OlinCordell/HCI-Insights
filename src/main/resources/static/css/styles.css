@@ -11,7 +11,7 @@
     --topbar-height: 70px;
     --sidebar-width: 240px;
     --font-body: 'Lato', sans-serif;
-    --circle-size-1: 250px;
+    --circle-size-1: 200px;
     --circle-size-2: 300px;
 }
 
@@ -32,6 +32,7 @@ body {
     padding: 40px;
     min-height: calc(100vh - var(--topbar-height));
     background-color: var(--cream);
+    background: transparent;
 }
 
 /* ------------------ Background Circles ------------------ */
@@ -48,22 +49,22 @@ body {
 .bg-circle.maroon { background: var(--maroon); }
 
 .bg-circle.top-left {
-    top: -80px;
-    left: -60px;
+    top: 120px;
+    left: 50px;
     width: var(--circle-size-1);
     height: var(--circle-size-1);
 }
 
 .bg-circle.bottom-right {
-    bottom: -90px;
-    right: -70px;
+    bottom: 100px;
+    right: 100px;
     width: var(--circle-size-2);
     height: var(--circle-size-2);
 }
 
 .bg-circle.mid {
-    top: 60vh;
-    left: 50vw;
+    top: 40vh;
+    left: 70vw;
     width: 180px;
     height: 180px;
     opacity: 0.18;
