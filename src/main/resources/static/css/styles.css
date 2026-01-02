@@ -168,6 +168,21 @@ body {
 /* ------------------ Sidebar ------------------ */
 
 .sidebar {
+    position: fixed !important;
+    top: 70px !important;
+    left: 0 !important;
+    width: 240px !important;
+    height: calc(100vh - 70px) !important;
+    background-color: white !important;
+    z-index: 900 !important;
+    padding: 30px 20px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow-y: auto !important;
+}
+
+/*.sidebar {
     position: fixed;
     top: var(--topbar-height);
     left: 0;
@@ -184,7 +199,7 @@ body {
     overflow-y: auto;
     flex-shrink: 0;
     border: 3px solid red;
-}
+}*/
 
 .sidebar-header {
     margin-bottom: 30px;
