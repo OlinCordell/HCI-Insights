@@ -8,8 +8,8 @@
     --text-dark: #222;
     --text-muted: #555;
     --radius: 14px;
-    --topbar-height: 60px;
-    --sidebar-width: 220px;
+    --topbar-height: 70px;
+    --sidebar-width: 240px;
     --font-body: 'Lato', sans-serif;
 }
 
@@ -18,9 +18,10 @@ body {
     background-color: var(--cream);
     margin: 0;
     padding: 0;
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-body);
     color: var(--text-dark);
     overflow-x: hidden;
+    min-height: 100vh
 }
 
 .cream-bg {
@@ -32,7 +33,9 @@ body {
     margin-left: var(--sidebar-width);
     margin-top: var(--topbar-height);
     padding: 40px;
-    box-sizing: border-box;
+    min-height: calc(100vh - var(--topbar-height));
+    position: relative;
+    z-index: 1;
 }
 
 /* ------------------ BACKGROUND CIRCLES ------------------ */
@@ -84,7 +87,7 @@ body {
     height: var(--topbar-height);
     width: 100%;
     background: #ffffff;
-    padding: 10px 30px;
+    padding: 0px 30px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     display: flex;
@@ -92,7 +95,7 @@ body {
     justify-content: space-between;
     position: fixed;
     top: 0;
-    z-index: 30;
+    z-index: 1000;
     box-sizing: border-box;
 }
 
@@ -171,11 +174,11 @@ body {
     background: #ffffff;
     box-shadow: 2px 0 8px rgba(0, 0, 0, 0.06);
     border-right: 1px solid rgba(0, 0, 0, 0.08);
-    padding: 20px;
+    padding: 30px 20px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    z-index: 20;
+    z-index: 900;
     overflow-y: auto;
 }
 
@@ -190,6 +193,7 @@ body {
 }
 
 .sidebar-link {
+    display: block;
     font-family: var(--font-body);
     font-weight: 500;
     color: #2a2a2a;
