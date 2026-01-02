@@ -4,12 +4,14 @@
 
 <body class="cream-bg">
 
-{{> fragments/navbar }}
+{{> fragments/navbar}}
+{{> fragments/sidebar}}
 
 <div class="bg-circle navy top-left"></div>
 <div class="bg-circle maroon bottom-right"></div>
 <div class="bg-circle navy mid"></div>
 
+<div class="main-content">
 <div class="back-btn-floating">
     <a class="btn btn-back" href="/studies/{{studyId}}/tasks">← Back to Tasks</a>
 </div>
@@ -39,6 +41,7 @@
         <button type="submit" class="btn">Create Task</button>
     </form>
 
+</div>
 </div>
 
 {{> fragments/footer}}

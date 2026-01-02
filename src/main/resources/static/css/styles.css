@@ -11,36 +11,30 @@
     --topbar-height: 70px;
     --sidebar-width: 240px;
     --font-body: 'Lato', sans-serif;
+    --circle-size-1: 250px;
+    --circle-size-2: 300px;
 }
 
-/* global */
+/* ------------------ Global ------------------ */
 body {
     background-color: var(--cream);
     margin: 0;
-    padding: 0;
     font-family: var(--font-body);
     color: var(--text-dark);
     overflow-x: hidden;
-    min-height: 100vh
-}
-
-.cream-bg {
-    background-color: var(--cream);
     min-height: 100vh;
 }
 
+/* ------------------ Layout ------------------ */
 .main-content {
     margin-left: var(--sidebar-width);
     margin-top: var(--topbar-height);
     padding: 40px;
     min-height: calc(100vh - var(--topbar-height));
-    position: relative;
-    z-index: 1;
     background-color: var(--cream);
 }
 
-/* ------------------ BACKGROUND CIRCLES ------------------ */
-
+/* ------------------ Background Circles ------------------ */
 .bg-circle {
     position: fixed;
     border-radius: 50%;
@@ -50,16 +44,9 @@ body {
     filter: blur(2px);
 }
 
-/* visible circles */
-.bg-circle.navy {
-    background: var(--navy);
-}
+.bg-circle.navy { background: var(--navy); }
+.bg-circle.maroon { background: var(--maroon); }
 
-.bg-circle.maroon {
-    background: var(--maroon);
-}
-
-/* positions */
 .bg-circle.top-left {
     top: -80px;
     left: -60px;
@@ -83,20 +70,19 @@ body {
 }
 
 /* ------------------ Top Navigation Bar ------------------ */
-
 .topbar {
-    height: var(--topbar-height);
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    background: #ffffff;
-    padding: 0px 30px;
+    height: var(--topbar-height);
+    background: white;
+    padding: 0 30px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: fixed;
-    top: 0;
-    left: 0;
     z-index: 1100;
     box-sizing: border-box;
 }
@@ -151,11 +137,9 @@ body {
     color: var(--navy);
 }
 
-/* ------------------ Nav ------------------ */
-
 .nav-links a {
-    text-decoration: none;
     color: var(--maroon);
+    text-decoration: none;
     font-weight: 600;
     margin-left: 22px;
     font-size: 14px;
@@ -166,7 +150,6 @@ body {
 }
 
 /* ------------------ Sidebar ------------------ */
-
 .sidebar {
     position: fixed !important;
     top: 70px !important;
@@ -180,29 +163,8 @@ body {
     display: flex !important;
     flex-direction: column !important;
     overflow-y: auto !important;
-}
-
-/*.sidebar {
-    position: fixed;
-    top: var(--topbar-height);
-    left: 0;
-    width: var(--sidebar-width);
-    height: calc(100vh - var(--topbar-height));
-    background-color: #ffffff;
     box-shadow: 2px 0 8px rgba(0, 0, 0, 0.06);
     border-right: 1px solid rgba(0, 0, 0, 0.08);
-    padding: 30px 20px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    z-index: 900;
-    overflow-y: auto;
-    flex-shrink: 0;
-    border: 3px solid red;
-}*/
-
-.sidebar-header {
-    margin-bottom: 30px;
 }
 
 .sidebar-nav {
@@ -213,12 +175,11 @@ body {
 
 .sidebar-link {
     display: block;
-    font-family: var(--font-body);
-    font-weight: 500;
     color: #2a2a2a;
     text-decoration: none;
     padding: 10px 12px;
     border-radius: 6px;
+    font-weight: 500;
 }
 
 .sidebar-link:hover {
@@ -227,7 +188,7 @@ body {
 
 .sidebar-link-primary {
     background: #1f2a44;
-    color: #ffffff;
+    color: white;
     font-weight: 600;
     margin-top: 10px;
 }
@@ -242,8 +203,7 @@ body {
     margin: 10px 0;
 }
 
-/* ------------------ Containers ------------------ */
-
+/* ------------------ Containers & Cards ------------------ */
 .container {
     max-width: 900px;
     margin: 40px 0;
@@ -251,19 +211,12 @@ body {
     box-sizing: border-box;
 }
 
-.center-align {
-    text-align: center;
-}
-
-/* back button wrapper aligned with content */
 .back-btn-floating {
     max-width: 900px;
     margin: 20px auto 0;
     padding: 0 20px;
     box-sizing: border-box;
 }
-
-/* ------------------ Cards ------------------ */
 
 .card {
     background: white;
@@ -273,7 +226,6 @@ body {
     margin-bottom: 25px;
 }
 
-/* card action bar */
 .card-actions {
     display: flex;
     justify-content: space-between;
@@ -289,17 +241,16 @@ body {
 }
 
 /* ------------------ Buttons ------------------ */
-
 .btn {
     display: inline-block;
     padding: 10px 18px;
     border-radius: var(--radius);
     background: var(--navy);
     color: white;
+    border: none;
     text-decoration: none;
     font-weight: 600;
     font-size: 14px;
-    border: none;
     cursor: pointer;
     text-align: center;
 }
@@ -321,19 +272,11 @@ body {
     background: #53121f;
 }
 
-/* back button styled like primary btn */
 .btn-back {
     margin-bottom: 18px;
 }
 
-.container>a.btn,
-.container>button.btn,
-.container>.btn {
-    margin-bottom: 20px;
-}
-
 /* ------------------ Forms ------------------ */
-
 form {
     display: flex;
     flex-direction: column;
@@ -347,7 +290,7 @@ select {
     border-radius: var(--radius);
     border: 1px solid #ccc;
     font-size: 15px;
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-body);
     box-sizing: border-box;
 }
 
@@ -355,7 +298,10 @@ textarea {
     resize: vertical;
 }
 
-/* ------------------ Page Headers / Text ------------------ */
+/* ------------------ Typography ------------------ */
+.center-align {
+    text-align: center;
+}
 
 .page-header {
     display: flex;
@@ -378,8 +324,7 @@ textarea {
     margin-bottom: 20px;
 }
 
-/* ------------------ Login / Footer ------------------ */
-
+/* ------------------ Login ------------------ */
 .login-wrapper {
     max-width: 420px;
     margin: 80px auto;
@@ -417,10 +362,10 @@ textarea {
     text-decoration: underline;
 }
 
+/* ------------------ Footer ------------------ */
 .footer {
     text-align: center;
     padding: 20px;
     color: var(--text-muted);
-    margin-top: 40px;
     font-size: 13px;
 }

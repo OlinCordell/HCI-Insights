@@ -5,11 +5,13 @@
 <body class="cream-bg">
 
 {{> fragments/navbar}}
+{{> fragments/sidebar}}
 
 <div class="bg-circle navy top-left"></div>
 <div class="bg-circle maroon bottom-right"></div>
 <div class="bg-circle navy mid"></div>
 
+<div class="main-content">
 <div class="container">
 
     <h1>Analytics Dashboard</h1>
@@ -71,6 +73,7 @@
         {{/participantScores}}
     </div>
 
+</div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
