@@ -8,6 +8,8 @@
     --text-dark: #222;
     --text-muted: #555;
     --radius: 14px;
+    --topbar-heigh: 60px;
+    --sidebar-width: 220px;
 }
 
 /* global */
@@ -26,8 +28,8 @@ body {
 }
 
 .main-content {
-    margin-left: 220px;
-    margin-top: 60px;
+    margin-left: var(--topbar-height);
+    margin-top: var(--sidebar-width);
     padding: 40px;
     box-sizing: border-box;
 }
@@ -78,6 +80,7 @@ body {
 /* ------------------ Top Navigation Bar ------------------ */
 
 .topbar {
+    height: var(--topbar-height);
     width: 100%;
     background: #ffffff;
     padding: 10px 30px;
@@ -85,9 +88,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 20;
+    z-index: 30;
     box-sizing: border-box;
 }
 
@@ -159,17 +162,18 @@ body {
 
 .sidebar {
     position: fixed;
-    top: 0;
+    top: var(--topbar-height);
     left: 0;
-    width: 220px;
-    height: 100vh;
+    width: var(--sidebar-width);
+    height: calc(100vh - var(--topbar-height));
     background: #ffffff;
     border-right: 1px solid rgba(0, 0, 0, 0.08);
     padding: 20px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    z-index: 10;
+    z-index: 20;
+    overflow-y: auto;
 }
 
 .sidebar-header {
