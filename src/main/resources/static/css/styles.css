@@ -50,21 +50,21 @@ body {
 
 .bg-circle.top-left {
     top: 120px;
-    left: 50px;
+    left: 70px;
     width: var(--circle-size-1);
     height: var(--circle-size-1);
 }
 
 .bg-circle.bottom-right {
     bottom: 100px;
-    right: 100px;
+    right: 70px;
     width: var(--circle-size-2);
     height: var(--circle-size-2);
 }
 
 .bg-circle.mid {
     top: 40vh;
-    left: 70vw;
+    left: 78vw;
     width: 180px;
     height: 180px;
     opacity: 0.18;
@@ -151,21 +151,27 @@ body {
 }
 
 /* ------------------ Sidebar ------------------ */
-.sidebar {
-    position: fixed !important;
-    top: 70px !important;
-    left: 0 !important;
-    width: 240px !important;
-    height: calc(100vh - 70px) !important;
-    background-color: white !important;
-    z-index: 900 !important;
-    padding: 30px 20px !important;
-    box-sizing: border-box !important;
-    display: flex !important;
-    flex-direction: column !important;
-    overflow-y: auto !important;
+body > .sidebar {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 240px;
+    height: calc(100vh - 70px);
+    background-color: white;
+    z-index: 900;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
     box-shadow: 2px 0 8px rgba(0, 0, 0, 0.06);
     border-right: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+body > .sidebar {
+    top: var(--topbar-height, 70px);
+    width: var(--sidebar-width, 240px);
+    height: calc(100vh - var(--topbar-height, 70px));
 }
 
 .sidebar-nav {
