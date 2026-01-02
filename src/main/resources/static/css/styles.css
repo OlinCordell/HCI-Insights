@@ -1,5 +1,5 @@
 /* ------------------ Root Colors & Fonts ------------------ */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap');
 
 :root {
     --cream: #f7f3e9;
@@ -8,9 +8,6 @@
     --text-dark: #222;
     --text-muted: #555;
     --radius: 14px;
-
-    --circle-size-1: 240px;
-    --circle-size-2: 140px;
 }
 
 /* global */
@@ -18,7 +15,7 @@ body {
     background-color: var(--cream);
     margin: 0;
     padding: 0;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Lato', sans-serif;
     color: var(--text-dark);
     overflow-x: hidden;
 }
@@ -26,6 +23,13 @@ body {
 .cream-bg {
     background-color: var(--cream);
     min-height: 100vh;
+}
+
+.main-content {
+    margin-left: 220px;
+    margin-top: 60px;
+    padding: 40px;
+    box-sizing: border-box;
 }
 
 /* ------------------ BACKGROUND CIRCLES ------------------ */
@@ -83,7 +87,7 @@ body {
     justify-content: space-between;
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 20;
     box-sizing: border-box;
 }
 
@@ -149,6 +153,64 @@ body {
 
 .nav-links a:hover {
     text-decoration: underline;
+}
+
+/* ------------------ Sidebar ------------------ */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100vh;
+    background: #ffffff;
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.sidebar-header {
+    margin-bottom: 30px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sidebar-link {
+    font-family: var(--font-body);
+    font-weight: 500;
+    color: #2a2a2a;
+    text-decoration: none;
+    padding: 10px 12px;
+    border-radius: 6px;
+    transition: background 0.15s ease;
+}
+
+.sidebar-link:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-link-primary {
+    background: #1f2a44;
+    color: #ffffff;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.sidebar-link-primary:hover {
+    background: #162033;
+}
+
+.sidebar-divider {
+    height: 1px;
+    background: rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
 }
 
 /* ------------------ Containers ------------------ */
@@ -256,7 +318,7 @@ select {
     border-radius: var(--radius);
     border: 1px solid #ccc;
     font-size: 15px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Lato', sans-serif;
     box-sizing: border-box;
 }
 
